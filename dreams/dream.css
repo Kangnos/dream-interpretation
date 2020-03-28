@@ -1,0 +1,38 @@
+a:link{
+    text-decoration: none;
+}
+
+.pagelink{
+    text-align: center;
+}
+.maintitle{
+    color: black;
+    font-size: 40px;
+    border: 2px solid black;
+    padding-left: 13px;
+    padding-right: 13px;
+}
+.subtitle_blocktiles{
+    margin-top: 70px;
+    font-size: 30px;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+    padding-bottom: 12px;
+    border-left: 10px solid red;
+    padding-left: 15px;
+}     
+.explain{
+    margin-top: 10px;
+    margin-left: 1px;
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.maincontainer{
+    margin-bottom: 200px;
+}
+.container{
+    margin-top: 30px;
+    padding-left: 300px;
+    padding-right: 300px;
+}
