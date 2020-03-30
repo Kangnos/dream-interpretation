@@ -29,11 +29,10 @@ app.get('/:pageId', function(request, response){
       });
     });
 });
-  
-app.get('/자연/:pageId', function(request, response){
-  fs.readdir('./tem_data', function(error, filelist){
+app.get('/%EC%9E%AC%EB%B0%8C%EB%8A%94%EA%BF%88/:pageId', function(request, response){
+  fs.readdir('./tem_data_funny', function(error, filelist){
     var filteredId = path.parse(request.params.pageId).base;
-    fs.readFile(`tem_data/${filteredId}`, 'utf8', function(err, description){
+    fs.readFile(`tem_data_funny/${filteredId}`, 'utf8', function(err, description){
       console.log(filteredId);
       var tem_title = request.params.pageId;
       var tem_html = tempalte.HTML(tem_title, 
@@ -44,6 +43,55 @@ app.get('/자연/:pageId', function(request, response){
 });
  
 
+  
+app.get('/%EC%9E%90%EC%97%B0/:pageId', function(request, response){
+  fs.readdir('./tem_data_nature', function(error, filelist){
+    var filteredId = path.parse(request.params.pageId).base;
+    fs.readFile(`tem_data_nature/${filteredId}`, 'utf8', function(err, description){
+      console.log(filteredId);
+      var tem_title = request.params.pageId;
+      var tem_html = tempalte.HTML(tem_title, 
+        `${description}`)
+      response.send(tem_html);
+    });
+  });
+}); 
+app.get('/%EC%9D%B8%EB%AC%BC/:pageId', function(request, response){
+  fs.readdir('./tem_data_people', function(error, filelist){
+    var filteredId = path.parse(request.params.pageId).base;
+    fs.readFile(`tem_data_people/${filteredId}`, 'utf8', function(err, description){
+      console.log(filteredId);
+      var tem_title = request.params.pageId;
+      var tem_html = tempalte.HTML(tem_title, 
+        `${description}`)
+      response.send(tem_html);
+    });
+  });
+}); 
+app.get('/%EC%8B%A0%EC%B2%B4/:pageId', function(request, response){
+  fs.readdir('./tem_data_body', function(error, filelist){
+    var filteredId = path.parse(request.params.pageId).base;
+    fs.readFile(`tem_data_body/${filteredId}`, 'utf8', function(err, description){
+      console.log(filteredId);
+      var tem_title = request.params.pageId;
+      var tem_html = tempalte.HTML(tem_title, 
+        `${description}`)
+      response.send(tem_html);
+    });
+  });
+});
+app.get('/%EB%8F%99%EB%AC%BC/:pageId', function(request, response){
+  fs.readdir('./tem_data_animal', function(error, filelist){
+    var filteredId = path.parse(request.params.pageId).base;
+    fs.readFile(`tem_data_animal/${filteredId}`, 'utf8', function(err, description){
+      console.log(filteredId);
+      var tem_title = request.params.pageId;
+      var tem_html = tempalte.HTML(tem_title, 
+        `${description}`)
+      response.send(tem_html);
+    });
+  });
+}); 
 
  
 app.listen(3000, function() {
